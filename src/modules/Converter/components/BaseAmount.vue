@@ -2,15 +2,22 @@
   <header className="base-amount">
     <h1 className="base-amount__title">Converter</h1>
     <h2 className="base-amount__amount">
-      <input type="number" value="1" className="base-amount__value" />
-      1 euro
+      <input @change="handleChangeAmount" type="number" v-model="amount" className="base-amount__value" />
+      euro
     </h2>
+      
   </header>
 </template>
 
 <script>
 export default {
   name: "BaseAmount",
+  props: ['amount', 'setAmount'],
+  methods: {
+    handleChangeAmount: function() {
+      this.setAmount(this.amount);
+    }
+  }
 };
 </script>
 
@@ -18,13 +25,13 @@ export default {
 .base-amount {
   background-color: var(--color-main);
   /* // on peut même faire des calculs en utilisant nos variables ! */
-  padding: 2 * var(--gutter) var(--gutter);
+  padding: 2rem var(--gutter);
   color: var(--color-light);
 }
 .base-amount__title {
   font-weight: var(--weight-bold);
   font-size: 1.5rem;
-  margin-bottom: 0.5 * var(--gutter);
+  margin-bottom: var(--gutter);
 }
 
 .base-amount__amount {
@@ -37,7 +44,7 @@ export default {
   font: inherit;
   color: var(--color-light);
   width: 4em;
-  margin-right: var(--gutter) / 2;
+  margin-right: 0.4rem;
 }
 .base-amount__value:focus {
   box-shadow: inset 3px 3px 3px #00000080;

@@ -4,20 +4,29 @@
       type="text"
       className="currencies__search"
       placeholder="Rechercher..."
+      v-model="search"
+      @change="handleChangeSearch"
     />
     <ul className="currencies__list">
-      <Currency name="salut salut" />
+      <Currency v-for="item in currencies" :key="item.id" :name="item.name" :setCurrentCurrency="setCurrentCurrency" />
     </ul>
   </div>
 </template>
 
 <script>
 import Currency from "./Currency.vue";
+
 export default {
   name: "Currencies-component",
+  props: ['currencies', 'setCurrentCurrency', 'search', 'setSearch'],
   components: {
     Currency,
   },
+  methods: {
+    handleChangeSearch: function() {
+      this.setSearch(this.search)
+    }
+  }
 };
 </script>
 
@@ -29,6 +38,8 @@ export default {
 
   max-height: 300px;
   overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
 .currencies__search {
   padding: var(--gutter) var(--gutter);

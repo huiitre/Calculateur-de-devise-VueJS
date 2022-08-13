@@ -1,10 +1,19 @@
 <template>
-  <button className="toggler toggler--open" type="button">=</button>
+  <button
+    v-on:click="handleChangeOpen"
+    class="toggler"
+    :class="{'toggler--open': open}"
+    type="button"
+  >=</button>
 </template>
 
 <script>
 export default {
   name: "Toogler-component",
+  props: ['handleChangeOpen', 'open'],
+  updated () {
+    console.log('open : ', this.open);
+  },
 };
 </script>
 
@@ -27,6 +36,7 @@ export default {
 }
 .toggler:hover {
   background-color: var(--color-alt);
+  cursor: pointer;
 }
 
 .toggler--open {
