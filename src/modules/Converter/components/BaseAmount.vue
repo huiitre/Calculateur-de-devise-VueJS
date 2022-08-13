@@ -9,7 +9,7 @@
     <h1 className="base-amount__title">Converter</h1>
     <h2 className="base-amount__amount">
       <input @change="handleChangeAmount" type="number" v-model="amount" className="base-amount__value" />
-      euro
+      {{ amount > 1 ? 'euros' : 'euro' }}
     </h2>
       
   </header>
