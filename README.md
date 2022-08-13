@@ -1,3 +1,9 @@
+# ATTENTION AUX DECLARATIONS DE FONCTIONS FLECHEES
+```
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+```
+
+
 # calculateur-de-devise
 
 ## Project setup

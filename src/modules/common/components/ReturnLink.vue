@@ -1,3 +1,6 @@
+//* Simple bouton retour que j'utilise à la fois dans le module Converter
+//* mais aussi dans la page 404
+
 <template>
   <div class="return">
     <RouterLink class="return__link" to="/">Retour</RouterLink>

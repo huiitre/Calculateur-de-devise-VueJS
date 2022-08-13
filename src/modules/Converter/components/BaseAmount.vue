@@ -1,3 +1,9 @@
+//* @change est une autre version de v-on:change="handleChangeAmount"
+//* ou en React/JavaScript : onChange={handleChangeAmount}
+
+//* v-model, l'équivalent de notre value=""
+//* https://v2.vuejs.org/v2/guide/components-custom-events.html#Customizing-Component-v-model
+
 <template>
   <header className="base-amount">
     <h1 className="base-amount__title">Converter</h1>

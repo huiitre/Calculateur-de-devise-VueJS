@@ -2,12 +2,12 @@
 	<li v-on:click="handleChangeCurrency" className="currency">{{ name }}</li>
 </template>
 
+//* Pour cibler un prop ou une propriété quelconque depuis une méthode
+//* ou plus généralement depuis l'export défault, on va s'aider du "this"
 <script>
 export default {
 	name: 'Currency-component',
 	props: ['name', 'setCurrentCurrency'],
-  created() {
-  },
   methods: {
     handleChangeCurrency: function() {
       this.setCurrentCurrency(this.name);

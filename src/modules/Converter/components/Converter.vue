@@ -1,3 +1,12 @@
+//* v-bind:property ou :property signifie qu'on vient insérer une prop dynamique
+
+//* Pour l'exemple avec Currencies :
+//* Même principe qu'avec React, on insère une fonction "setSearch" afin de venir modifier notre state "search" en fonction de ce que l'utilisateur a renseigné
+//* En React : const [search, setSearch] = useState(valeurParDefaut);
+
+//* v-if="open" veut dire que le composant sera présent uniquement si "open" vaut true, tout simplement
+//* équivalant avec React :  { open && <Currencies /> }
+
 <template>
   <div class="converter">
     <BaseAmount v-bind:setAmount="setAmount" />
@@ -14,15 +23,21 @@
 </template>
 
 <script>
+//* imports compoants
 import BaseAmount from "./BaseAmount.vue";
 import Toggler from "./Toggler.vue";
 import Currencies from "./Currencies.vue";
 import ConvertedAmount from "./ConvertedAmount.vue";
 import ReturnLink from "@/modules/common/components/ReturnLink.vue";
+
+//* imports utils
 import findCurrencyByName from '@/modules/Converter/utils/findCurrencyByName'
-import currencies from '@/data/currencies.js'
 import roundDecimal from '@/modules/Converter/utils/roundDecimal'
 
+//* imports data (en attendant l'API)
+import currencies from '@/data/currencies.js'
+
+//* export
 export default {
   name: "Converter-component",
   components: {
@@ -32,6 +47,7 @@ export default {
     ConvertedAmount,
     ReturnLink,
   },
+	//* notre state déclaré dans une fonction data() (natif à vue)
 	data() {
 		return {
 			currencies: [],
@@ -45,9 +61,11 @@ export default {
 			open: false
 		}
 	},
+	//* à l'initialisation de l'app
 	created() {
     this.currencies = this.getFilteredCurrencies()
   },
+	//* les méthodes qui seront relues à chaque rendu (relues et non exécutés)
 	methods: {
 		setCurrentCurrency: function(string) {
       const currency = findCurrencyByName(this.currencies, string);
@@ -80,11 +98,14 @@ export default {
 			);
 		}
 	},
+	//* Différence avec methods:, watch: et autres ...
+	//* https://fr.vuejs.org/v2/guide/computed.html
 	computed: {
 		getResult: function() {
 			return this.result = roundDecimal(this.amount*this.currentCurrency.rate);
 		}
 	},
+	//* des tests divers ...
 	/* watch: {
 		search: function() {
 			console.log('ça change');

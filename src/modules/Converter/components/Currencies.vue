@@ -1,3 +1,11 @@
+//* v-for va nous permettre de boucler l'élément sur lequel il est accroché
+
+//* Note: Je n'ai pas encore creusé le principe de boucles dans vue
+//* comme une boucle dans une boucle par exemple
+//* je n'ai pas non plus réussi à passer en props l'objet en entier
+//* comme par exemple en react : <Currency {...item} />
+//* qui correspond au contenu de l'objet envoyé en props
+
 <template>
   <div className="currencies">
     <input
@@ -27,6 +35,9 @@ export default {
       this.setSearch(this.search)
     } */
   },
+  //* updated pourrait correspondre à un useEffect en React, c'est ce qui me permet
+  //* de relancer la recherche à chaques touches du clavier
+  //* https://www.digitalocean.com/community/tutorials/vuejs-component-lifecycle-fr
   updated () {
     this.setSearch(this.search);
     // this.handleChangeSearch();

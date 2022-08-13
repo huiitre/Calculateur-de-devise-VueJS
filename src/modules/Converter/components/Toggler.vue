@@ -1,3 +1,7 @@
+//* On va venir faire un v-bind:class ou en short :class en disant que : 
+//* 'toggler--open' sera affiché quand "open" vaudra true
+//* "open" qui vient du composant parent Converter
+
 <template>
   <button
     v-on:click="handleChangeOpen"

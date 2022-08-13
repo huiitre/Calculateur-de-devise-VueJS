@@ -1,6 +1,8 @@
+//* La page d'accueil (origine VueJS)
 <template>
   <img alt="Vue logo" src="@/assets/logo.png" />
   <div class="hello">
+    <!-- //* Le props qu'on vient afficher dans le HTML -->
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -86,7 +88,10 @@
     </ul>
     <h3>Modules</h3>
     <ul>
-      <li><RouterLink to="/">Home</RouterLink></li>
+      <!-- //* Nos différentes routes -->
+      <li>
+        <RouterLink to="/">Home</RouterLink>
+      </li>
       <li>
         <RouterLink to="/convertisseur">Convertisseur de devises</RouterLink>
       </li>
@@ -95,12 +100,10 @@
 </template>
 
 <script>
-// import { RouterLink } from 'vue-router'
 export default {
   name: "Home-comp",
-  components: {
-    // RouterLink,
-  },
+  //* On vient récupérer notre prop "msg"
+  //* en objet avec en propriété la prop et en value son type
   props: {
     msg: String,
   },

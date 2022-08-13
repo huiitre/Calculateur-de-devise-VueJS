@@ -1,3 +1,4 @@
+//* Affichage des vues de notre router
 <template>
   <RouterView />
 </template>
