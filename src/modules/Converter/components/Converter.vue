@@ -56,7 +56,6 @@ export default {
     },
 		setAmount: function(amount) {
 			this.amount = amount
-			console.log('this.amount : ', this.amount);
 		},
 		handleChangeOpen: function() {
 			this.open = !this.open
@@ -64,10 +63,10 @@ export default {
 				// this.resetState();
 		},
 		setSearch: function(search) {
-			console.log('search : ', search);
 			this.search = search
 			this.currencies = this.getFilteredCurrencies()
 		},
+		/* //! Déprécié */
 		/* resetState: function() {
 			this.currentCurrency.name = '';
 			this.currentCurrency.rate = 0;
@@ -86,11 +85,11 @@ export default {
 			return this.result = roundDecimal(this.amount*this.currentCurrency.rate);
 		}
 	},
-	watch: {
+	/* watch: {
 		search: function() {
 			console.log('ça change');
 		}
-	}
+	} */
 	/* updated() {
 		console.log('updated');
 	}, */

@@ -11,9 +11,6 @@
 export default {
   name: "Toogler-component",
   props: ['handleChangeOpen', 'open'],
-  updated () {
-    console.log('open : ', this.open);
-  },
 };
 </script>
 

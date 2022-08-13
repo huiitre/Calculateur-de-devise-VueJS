@@ -23,9 +23,13 @@ export default {
     Currency,
   },
   methods: {
-    handleChangeSearch: function() {
+    /* handleChangeSearch: function() {
       this.setSearch(this.search)
-    }
+    } */
+  },
+  updated () {
+    this.setSearch(this.search);
+    // this.handleChangeSearch();
   }
 };
 </script>
