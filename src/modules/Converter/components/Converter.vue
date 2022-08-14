@@ -19,7 +19,6 @@
 		/>
     <ConvertedAmount v-bind:result="getResult" :currency="currentCurrency.name" />
   </div>
-  <ReturnLink />
 </template>
 
 <script>
@@ -28,7 +27,6 @@ import BaseAmount from "./BaseAmount.vue";
 import Toggler from "./Toggler.vue";
 import Currencies from "./Currencies.vue";
 import ConvertedAmount from "./ConvertedAmount.vue";
-import ReturnLink from "@/modules/common/components/ReturnLink.vue";
 
 //* imports utils
 import findCurrencyByName from '@/modules/Converter/utils/findCurrencyByName'
@@ -45,7 +43,6 @@ export default {
     Toggler,
     Currencies,
     ConvertedAmount,
-    ReturnLink,
   },
 	//* notre state déclaré dans une fonction data() (natif à vue)
 	data() {
@@ -61,11 +58,11 @@ export default {
 			open: false
 		}
 	},
-	//* à l'initialisation de l'app
+	//* à l'initialisation du composant
 	created() {
     this.currencies = this.getFilteredCurrencies()
   },
-	//* les méthodes qui seront relues à chaque rendu (relues et non exécutés)
+	//* les méthodes qui seront relues à chaque rendu (relues mais non exécutés)
 	methods: {
 		setCurrentCurrency: function(string) {
       const currency = findCurrencyByName(this.currencies, string);

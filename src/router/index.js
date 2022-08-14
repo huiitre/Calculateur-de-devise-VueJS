@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // import HomeView from '@/views/HomeView.vue'
-import HomeView from "@/views/HomeView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 
 //* Création de notre router
@@ -16,11 +15,6 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
-    },
-    {
-      path: "/convertisseur",
-      name: "convertisseur",
       component: () => import("@/views/ConverterView.vue"),
     },
     //* Route pour la 404 (paramètres d'url sont déclarés plus bas)
