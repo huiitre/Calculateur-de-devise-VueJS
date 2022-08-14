@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-// import HomeView from '@/views/HomeView.vue'
-import NotFoundView from "@/views/NotFoundView.vue";
+//? pas besoin vu qu'on va compiler le module sous android
+// import NotFoundView from "@/views/NotFoundView.vue";
 
 //* Création de notre router
 const router = createRouter({
@@ -18,16 +18,18 @@ const router = createRouter({
       component: () => import("@/views/ConverterView.vue"),
     },
     //* Route pour la 404 (paramètres d'url sont déclarés plus bas)
-    {
+    //? pas besoin vu qu'on va compiler le module sous android
+    /* {
       path: "/:pathMatch(.*)*",
       name: "not-found",
       component: NotFoundView,
-    },
+    }, */
   ],
 });
 //* En gros, avant que la route ne se finalise, on check ses paramètres
-router.resolve({
+//? pas besoin vu qu'on va compiler le module sous android
+/* router.resolve({
   name: "not-found",
   params: { pathMatch: "not/found" },
-}).href;
+}).href; */
 export default router;
