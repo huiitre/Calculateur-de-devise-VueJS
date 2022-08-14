@@ -14,7 +14,7 @@
 .return__link {
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
+  color: blue;
   text-decoration: none;
 }
 </style>
