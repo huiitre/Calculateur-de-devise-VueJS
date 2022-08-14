@@ -8,7 +8,7 @@
 //* équivalant avec React :  { open && <Currencies /> }
 
 <template>
-  <div class="converter">
+  <div class="converter" :class="{ 'converted--open': open }">
     <BaseAmount v-bind:setAmount="setAmount" />
     <Toggler v-bind:handleChangeOpen="handleChangeOpen" :open="open" />
     <Currencies
@@ -140,8 +140,14 @@ export default {
 
 <style scoped>
 .converter {
+	margin: 0;
+}
+@media screen and (min-width: 500px) {
+	.converter {
   max-width: 300px;
   margin: var(--gutter) auto;
   text-align: center;
 }
+}
+
 </style>

@@ -27,4 +27,12 @@ export default {
 .converted-amount__currency {
   font-weight: var(--weight-regular);
 }
+
+@media screen and (max-width: 499px) {
+  .converted--open .converted-amount {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
 </style>

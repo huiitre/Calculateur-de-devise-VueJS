@@ -46,6 +46,11 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 499px) {
+  .currencies {
+    max-height: 100% !important;
+  }
+}
 .currencies {
   background-color: var(--color-light);
   color: var(--color-main);
